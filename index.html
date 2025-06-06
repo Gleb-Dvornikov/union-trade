@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Excellence · Стройматериалы 360°</title>
+
+  <!-- Google Fonts + Tailwind CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (scroll-animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <style>
+    /* ---------- Design Tokens ------------ */
+    :root{
+      --bg-dark:#0a0f1f;
+      --card:#ffffff0f;
+      --stroke:#ffffff26;
+      --accent:#ffb703;
+    }
+    /* ---------- Global ------------------- */
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      background:var(--bg-dark);
+      color:#e2e8f0;
+      font-family:"Manrope",system-ui,sans-serif;
+      line-height:1.6;
+    }
+    /* ---------- Glass card --------------- */
+    .card{
+      background:var(--card);
+      backdrop-filter:blur(12px) saturate(120%);
+      border:1px solid var(--stroke);
+      border-radius:1.25rem;
+    }
+    /* ---------- Hero animation ----------- */
+    @keyframes gradientShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .gradient-flow{
+      background-size:200% 200%;
+      animation:gradientShift 12s ease-in-out infinite;
+    }
+    /* ---------- Floating icons ----------- */
+    @keyframes float{
+      0%,100%{transform:translateY(-4px)}
+      50%{transform:translateY(4px)}
+    }
+    .float{animation:float 4s ease-in-out infinite}
+    /* ---------- Table -------------------- */
+    table{width:100%;border-collapse:collapse;font-size:1.025rem}
+    td,th{padding:18px 22px;border:1px solid var(--stroke)}
+    th{font-weight:600;background:var(--card)}
+  </style>
+</head>
+<body>
+
+<!-- HERO ------------------------------------------------------------------>
+<section class="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden">
+  <!-- animated gradient -->
+  <div class="absolute inset-0 gradient-flow bg-gradient-to-r from-indigo-800 via-purple-800 to-fuchsia-700"></div>
+  <!-- noise overlay -->
+  <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.webp')] opacity-15 mix-blend-overlay"></div>
+  <!-- content -->
+  <div class="relative z-10 max-w-5xl px-8 py-20" data-aos="fade-up">
+    <h1 class="text-6xl md:text-7xl font-extrabold mb-8 text-[var(--accent)] drop-shadow-lg">
+      Excel → Jira + Slack
+    </h1>
+    <p class="text-2xl md:text-3xl font-medium max-w-3xl mx-auto">
+      Трансформируем хаос в&nbsp;элегантную систему за 30 дней: статусы, напоминания и прибыль <span class="whitespace-nowrap">— в реальном времени</span>
+    </p>
+  </div>
+</section>
+
+<!-- СРАВНЕНИЕ ------------------------------------------------------------->
+<section class="py-32 px-6">
+  <h2 class="text-4xl font-extrabold text-center mb-20" data-aos="fade-up">
+    <span class="text-[var(--accent)]">До</span> и <span class="text-[var(--accent)]">После</span> внедрения
+  </h2>
+
+  <div class="overflow-x-auto max-w-7xl mx-auto rounded-3xl shadow-xl" data-aos="fade-up" data-aos-delay="100">
+    <table class="card">
+      <tr class="text-lg">
+        <th></th>
+        <th class="text-red-400">До (ручная рутина)</th>
+        <th class="text-emerald-400">После (автоматизация)</th>
+      </tr>
+      <tr><th>Создание заявки</th><td>15 мин в Google Sheet</td><td><b>30 сек</b> – шаблон Jira + автонумер.</td></tr>
+      <tr><th>Коммуникация</th><td>до 15 звонков/чаты</td><td>переписка в карточке + превью в #закупки</td></tr>
+      <tr><th>Контроль сроков</th><td>личные «пинки» владельца</td><td>таймер 48 ч → авто-напоминание</td></tr>
+      <tr><th>Документы</th><td>чеки теряются</td><td>чек обязателен для «Оплачено»</td></tr>
+      <tr><th>Учёт прибыли</th><td>Excel-формулы вручную</td><td>поля «Сумма/Маржа» валидируются</td></tr>
+      <tr><th>Отчёт</th><td>2 ч сводной таблицы</td><td>ежедневный дайджест 08:00</td></tr>
+      <tr><th>Задержка поставки</th><td>4-5 дней</td><td>&lt; 1 дня (прозрачность + таймер)</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- РОЛИ & ПОТОК ---------------------------------------------------------->
+<section class="py-32 px-6 bg-gray-900">
+  <h2 class="text-4xl font-extrabold text-center mb-20" data-aos="fade-up">
+    Кто и как теперь работает
+  </h2>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in">
+      <div class="text-6xl mb-4 float">👑</div>
+      <h3 class="text-2xl font-semibold mb-4">Владелец</h3>
+      <p class="text-sm leading-relaxed">
+        Ставит задачи в Jira за 30 сек. В 08:00 получает авто-дайджест (оборот, маржа, «узкие» места). <b>+40 ч</b> свободного времени в месяц.
+      </p>
+    </div>
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="text-6xl mb-4 float">👨‍💼</div>
+      <h3 class="text-2xl font-semibold mb-4">Менеджер продаж</h3>
+      <p class="text-sm leading-relaxed">
+        Заполняет шаблон; при статусе «Утверждено» — автоматический «Запрос счёта» снабженцу. Ручной рутины <b>на 60 % меньше</b>.
+      </p>
+    </div>
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="200">
+      <div class="text-6xl mb-4 float">🏗️</div>
+      <h3 class="text-2xl font-semibold mb-4">Снабженец</h3>
+      <p class="text-sm leading-relaxed">
+        Прикрепляет счёт и чек, отмечает «Оплачено/Доставлено». Таймер напомнит за 48 ч до срыва. Документы не теряются.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- РОБОТЫ --------------------------------------------------------------->
+<section class="py-32 px-6">
+  <h2 class="text-4xl font-extrabold text-center mb-20" data-aos="fade-up">
+    4 робота, которые работают 24/7
+  </h2>
+
+  <div class="grid md:grid-cols-4 gap-10 max-w-6xl mx-auto">
+
+    <div class="card p-8 rounded-2xl text-center" data-aos="flip-left">
+      <p class="text-4xl mb-3 float">①</p>
+      <h3 class="font-semibold mb-2">Запрос счёта</h3>
+      <p class="text-sm">Смета «ОК» → авто-задача снабженцу «Запросить счёт».</p>
+    </div>
+
+    <div class="card p-8 rounded-2xl text-center" data-aos="flip-left" data-aos-delay="100">
+      <p class="text-4xl mb-3 float">②</p>
+      <h3 class="font-semibold mb-2">Таймер 48 ч</h3>
+      <p class="text-sm">Оплата задержалась? Slack напоминает менеджеру и владельцу.</p>
+    </div>
+
+    <div class="card p-8 rounded-2xl text-center" data-aos="flip-left" data-aos-delay="200">
+      <p class="text-4xl mb-3 float">③</p>
+      <h3 class="font-semibold mb-2">Контроль чека</h3>
+      <p class="text-sm">Без вложенного чека статус «Оплачено» недоступен.</p>
+    </div>
+
+    <div class="card p-8 rounded-2xl text-center" data-aos="flip-left" data-aos-delay="300">
+      <p class="text-4xl mb-3 float">④</p>
+      <h3 class="font-semibold mb-2">Дайджест 08-00</h3>
+      <p class="text-sm">Ежедневно: оборот, маржа, просрочки — в Slack-канале.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ВЫГОДЫ --------------------------------------------------------------->
+<section class="py-32 px-6 bg-gray-900">
+  <h2 class="text-4xl font-extrabold text-center mb-20" data-aos="fade-up">
+    Конечные метрики выгоды
+  </h2>
+
+  <div class="grid md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in">
+      <p class="text-6xl font-extrabold text-[var(--accent)] mb-4">+40 ч</p>
+      <p class="text-base">владелец освобождает ежемесячно</p>
+    </div>
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="100">
+      <p class="text-6xl font-extrabold text-[var(--accent)] mb-4">−60 %</p>
+      <p class="text-base">ручной рутины у команды</p>
+    </div>
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="200">
+      <p class="text-6xl font-extrabold text-[var(--accent)] mb-4">+25 %</p>
+      <p class="text-base">рост годовой выручки</p>
+    </div>
+
+    <div class="card p-12 rounded-3xl text-center" data-aos="zoom-in" data-aos-delay="300">
+      <p class="text-6xl font-extrabold text-[var(--accent)] mb-4">≈4 мес</p>
+      <p class="text-base">окупаемость инвестиций</p>
+    </div>
+  </div>
+</section>
+
+<!-- ЦЕНА ----------------------------------------------------------------->
+<section class="py-32 px-6">
+  <div class="max-w-2xl mx-auto card p-16 rounded-3xl text-center shadow-2xl" data-aos="zoom-in">
+    <h2 class="text-4xl font-extrabold mb-6">Стоимость проекта</h2>
+    <p class="text-7xl font-extrabold text-[var(--accent)] mb-6">250 000 ₽</p>
+    <p class="text-base opacity-85 mb-4">
+      Jira + Slack бесплатны до 10 пользователей.<br>
+      Формат оплаты — индивидуально.
+    </p>
+    <p class="text-xs opacity-60">
+      30 дней пост-поддержки и доработок включены.
+    </p>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ once:true, duration:900 });</script>
+
+</body>
+</html>
